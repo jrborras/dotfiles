@@ -8,8 +8,8 @@ export PATH="$HOME/bin:$PATH";
 # 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 # done;
 # unset file;
-source .bash_prompt
-source aliases
+source $HOME/.bash_prompt
+source $HOME/aliases
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
