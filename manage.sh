@@ -35,6 +35,13 @@ fun_copia(){
         #echo "[INFO] arxiu .bashrc si existeix"
         cp "$HOME/.bash_profile" "$DIR/old_files/.bash_prompt-$DATE"
     fi
+
+    # copia .vimrc
+    if [[ -e "$HOME/.vimrc" ]]
+    then
+      #echo "[INFO] arxiu .vimrc si existeix"
+      cp "$HOME/.vimrc" "$DIR/old_files/.vimrc-$DATE"
+    fi
 }
 
 fun_slink() {
@@ -44,7 +51,7 @@ fun_slink() {
     ln -fs "${DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
     ln -fs "${DIR}/bash/.bash_profile" "${HOME}/.bash_profile"
     ln -fs "${DIR}/bash/.bashrc" "${HOME}/.bashrc"
-
+    ln -fs "${DIR}/vim/.vimrc" "${HOME}/.vimrc"
 }
 
 echo "[INFO] iniciant script"
