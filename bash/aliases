@@ -29,7 +29,7 @@ alias l="ls -lF ${colorflag} --group-directories-first"
 
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag} --group-directories-first"
-alias ll="ls -alF ${colorflag} --group-directories-first"
+alias ll="ls -alFh ${colorflag} --group-directories-first"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
@@ -57,3 +57,7 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# docker
+alias dc='docker-compose'
+alias dcup='docker-compose up -d'
