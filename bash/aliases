@@ -61,3 +61,4 @@ alias path='echo -e ${PATH//:/\\n}'
 # docker
 alias dc='docker-compose'
 alias dcup='docker-compose up -d'
+alias dcb='docker-compose build"
