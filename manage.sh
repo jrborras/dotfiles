@@ -48,9 +48,9 @@ fun_stow(){
     # verifica que stow està instalat
     which stow > /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        echo "Stow està instalat"
+        echo "[INFO] Stow està instalat"
     else
-        echo "Stow no està instalat"
+        echo "[INFO] Stow no està instalat"
         sudo apt install stow
     fi
 }
