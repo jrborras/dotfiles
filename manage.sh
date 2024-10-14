@@ -20,43 +20,53 @@ fun_copia(){
     if [[ -e "$HOME/.bashrc" ]]
     then
         #echo "[INFO] arxiu .bashrc si existeix"
-        cp "$HOME/.bashrc" "$DIR/old_files/.bashrc-$DATE"
+        mv "$HOME/.bashrc" "$DIR/old_files/.bashrc-$DATE"
     fi
     # copia .bash_profile
     if [[ -e "$HOME/.bash_profile" ]]
     then
         #echo "[INFO] arxiu .bashrc si existeix"
-        cp "$HOME/.bash_profile" "$DIR/old_files/.bash_profile-$DATE"
+        mv "$HOME/.bash_profile" "$DIR/old_files/.bash_profile-$DATE"
     fi
 
     # copia .bash_prompt
     if [[ -e "$HOME/.bash_prompt" ]]
     then
         #echo "[INFO] arxiu .bashrc si existeix"
-        cp "$HOME/.bash_profile" "$DIR/old_files/.bash_prompt-$DATE"
+        mv "$HOME/.bash_profile" "$DIR/old_files/.bash_prompt-$DATE"
     fi
 
     # copia .vimrc
     if [[ -e "$HOME/.vimrc" ]]
     then
       #echo "[INFO] arxiu .vimrc si existeix"
-      cp "$HOME/.vimrc" "$DIR/old_files/.vimrc-$DATE"
+      mv "$HOME/.vimrc" "$DIR/old_files/.vimrc-$DATE"
+    fi
+}
+
+fun_stow(){
+    # verifica que stow està instalat
+    which stow > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "Stow està instalat"
+    else
+        echo "Stow no està instalat"
+        sudo apt install stow
     fi
 }
 
 fun_slink() {
     # realitza symlinks dels arxius
     echo "[INFO] fent symliks"
-    ln -fs "${DIR}/bash/aliases" "${HOME}/aliases"
-    ln -fs "${DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
-    ln -fs "${DIR}/bash/.bash_profile" "${HOME}/.bash_profile"
-    ln -fs "${DIR}/bash/.bashrc" "${HOME}/.bashrc"
-    ln -fs "${DIR}/vim/.vimrc" "${HOME}/.vimrc"
+    cd $DIR
+    stow bash
+    stow vim
 }
 
 echo "[INFO] iniciant script"
 
 fun_copia
+fun_stow
 fun_slink
 
 exit 0
