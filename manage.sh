@@ -33,7 +33,7 @@ fun_copia(){
     if [[ -e "$HOME/.bash_prompt" ]]
     then
         #echo "[INFO] arxiu .bashrc si existeix"
-        mv "$HOME/.bash_profile" "$DIR/old_files/.bash_prompt-$DATE"
+        mv "$HOME/.bash_prompt" "$DIR/old_files/.bash_prompt-$DATE"
     fi
 
     # copia .vimrc
