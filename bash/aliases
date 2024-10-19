@@ -51,14 +51,27 @@ alias week='date +%V'
 
 # Get Software Updates
 alias update='sudo apt update && sudo apt upgrade -y'
+alias install='sudo apt install -y '
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+alias genv='printenv | grep -i'
+
+# disk usage
+alias df='df -u'
+alias dusage='du -sh * 2> /dev/null'
 
 # docker
 alias dc='docker-compose'
 alias dcup='docker-compose up -d'
 alias dcb='docker-compose build'
+
+# file management
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias ln='ln -i'
+alias mkdir='mkdir -pv'
