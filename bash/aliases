@@ -29,7 +29,7 @@ if [ $? -eq 0 ]; then
 	alias ll="eza --icons -alF ${colorflag} --group-directories-first"
 
 	# List only directories
-	alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+	alias lsd="eza -lF ${colorflag} | grep --color=never '^d'"
 
 else
         echo "[INFO] EZA no està instalat, utiliza ls"
