@@ -13,7 +13,7 @@ alias g="git"
 # verifica que eza està instalat
 which eza > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-	echo "[INFO] EZA està instalat"
+	# echo "[INFO] EZA està instalat"
 
 	# Detect which `ls` flavor is in use
 	if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then
 	alias lsd="eza -lF ${colorflag} | grep --color=never '^d'"
 
 else
-        echo "[INFO] EZA no està instalat, utiliza ls"
+        # echo "[INFO] EZA no està instalat, utiliza ls"
         # sudo apt install eza
 
 	# Detect which `ls` flavor is in use
