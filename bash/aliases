@@ -80,8 +80,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias genv='printenv | grep -i'
 
 # disk usage
-alias df='df -u'
-alias dusage='du -sh * 2> /dev/null'
+alias df='df -'
+alias dusage='duh -sh * 2> /dev/null'
 
 # docker
 alias dc='docker-compose'
