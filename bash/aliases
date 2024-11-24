@@ -94,3 +94,6 @@ alias cp='cp -i'
 alias rm='rm -i'
 alias ln='ln -i'
 alias mkdir='mkdir -pv'
+
+# lazydocker
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /home/$USER/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
